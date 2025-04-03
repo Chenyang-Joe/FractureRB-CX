@@ -1,0 +1,5 @@
+% this is a comment;;;;;;;;;;;;;;;;;;;
+% each line specifies the parameters of one object, objects are identified by their collision-shape name (corresponds to the bullet-file);;;;;;;;;;;;;;;;;;;
+% collision-shape name;object name;ini. vel. x;init. vel. y;init. vel. z;init. rot. x;init. rot. y;init. rot. z;init. sleeping;mesh size;voxel size;Young's modulus;Possion ratio;density;strength;toughness;compressive factor;remesh target;ignore crack self-intersections;material model;max cracks per BEM run;fracture method;sampling density
+collisionObject1;nurbsSphere1; 0;-50;0;0;0;0;0; 0.6;0.1 ;3.10E+09;0.327;8900;7.60E+99;1.00E+03;3.0;  60;0;default;-1;1
+collisionObject3;pCube1;       0;  0;0;0;0;0;1; 0.4;0.04;3.10E+09;0.327;1000;7.60E+03;1.00E+03;6.0;1500;0;default;-1;1
