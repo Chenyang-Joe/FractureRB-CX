@@ -10,25 +10,35 @@ This project replaces https://github.com/david-hahn/FractureBEM.
 Your OpenVDB version should include the bugfix to TreeIterator.h from
 https://github.com/dreamworksanimation/openvdb/commit/e6aa3c83b58a90520c9825a2b385b8185b5c0df3
 
+---
 
 # My deployment
 
-I use docker to deploy this project at debian::burst. My local environment is macos.
-To run the program:
+I deploy this project using Docker on Debian (debian::burst) while developing locally on macOS. The g++ version is 8.3.0-6. The hyena package I use is HyENAlib2_x64_Debian_g++-4.9.zip. According to the debug info (see the last part), the bugs are possibly caused by the hyena compiling environment latency.
 
-# How to run example glass.sh?
-1. build docker images
-docker build -t fracture-rb .
+### Running the Program
 
-2. enter bash
+#### How to Run the `glass.sh` Example1. build docker images
+1. **Build the Docker Image**
+```bash
+docker build -t fracture-rb . 
+```
+
+2. **Enter the Docker Container**
+```bash
 docker run -it -v "$PWD":/app \
 -w /app \
 fracture-rb bash
+```
 
-4. install gdb for debug
+
+3. **Install GDB for Debugging**
+```bash
 apt-get install gdb
+```
 
-5. build and make project
+4. **Build and Compile the Project**
+```bash
 mkdir -p build && cd build
 cmake .. \
 -DCMAKE_CXX_FLAGS="-D_GLIBCXX_USE_CXX11_ABI=0" \
@@ -44,17 +54,24 @@ cmake .. \
 -DOpenVDBinclude=/tmp/openvdb
 
 make -j$(nproc)
+```
 
-6. run example
+5. **Run the Example**
+```bash
 cd ../examples
 chmod +x glass.sh
 ./glass.sh
 run
 bt
+```
 
-# debug info
-use bt to trace bugs:
+---
 
+## Debugging Information
+
+When debugging, you can use GDB to trace issues. Below is an example of a debugging session with a backtrace:
+
+```bash
 (gdb) run
 Starting program: /app/build/FractureRB glass.bullet glass.csv -o _out/glass_ -i 1e5 -f 1e7 -s 2
 [Thread debugging using libthread_db enabled]
@@ -174,3 +191,4 @@ __rawmemchr_avx2 () at ../sysdeps/x86_64/multiarch/memchr-avx2.S:65
     outFmt=FractureSim::BulletWrapper::OUT_MEL, dt=0.0040000000000000001, impulseThreshold=100000, 
     forceThreshold=10000000) at /app/src/BulletWrapper.cpp:447
 #10 0x0000555555a5d52b in main (argc=11, argv=0x7fffffffeca8) at /app/src/main.cpp:46
+```
