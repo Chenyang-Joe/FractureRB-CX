@@ -82,6 +82,23 @@ RUN apt-get update && apt-get install -y libcppunit-dev && \
 #     make install
 
 # -------------------------------------
+# fftw, hyena might use it
+# -------------------------------------
+WORKDIR /tmp
+RUN wget https://www.fftw.org/fftw-3.3.10.tar.gz && \
+    tar -xzf fftw-3.3.10.tar.gz
+
+WORKDIR /tmp/fftw-3.3.10
+RUN apt-get update && apt-get install -y m4 autoconf libtool bash && \
+    chmod +x configure && \
+    bash ./configure --enable-shared --prefix=/usr/local && \
+    make -j4 && \
+    make install
+
+
+
+
+# -------------------------------------
 # Set up application workspace
 # -------------------------------------
 WORKDIR /app
