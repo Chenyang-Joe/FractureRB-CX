@@ -1,4 +1,5 @@
 build/
 Dockerfile_jessie
 Dockerfile_OLD
+examples/_out_record
 .vscode
