@@ -103,7 +103,7 @@ namespace FractureSim{
 		//ToDo: write comment here
 		int remesh(int nTris, double adaptive=0.1, double offsetVoxels=0.0);
 		int writeMesh(std::string filename, double visualQuality=2.0, // visualQuality >1 no output, in [0,1] use VDB adaptive meshing, <0 use quadric decimation
-            bool visDisplace=true, bool visCOD=true, bool visClose=false, bool visOBJ=false
+            bool visDisplace=false, bool visCOD=false, bool visClose=false, bool visOBJ=false
         );
 		int writeVDB(std::string filename, bool updateSeeds=true); //NEW FOR FractureRB: option to suppress updates to the last written file when seeding cracks
 		int writeCrackTip(std::string filename);

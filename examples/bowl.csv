@@ -1,5 +1,5 @@
 % each line specifies the parameters of one object, objects are identified by their collision-shape name (corresponds to the bullet-file)
 % collision-shape name;object name;ini. vel. x;init. vel. y;init. vel. z;init. rot. x;init. rot. y;init. rot. z;init. sleeping;mesh size;voxel size;Young's modulus;Possion ratio;density;strength;toughness;compressive factor;remesh target;ignore crack self-intersections;material model;max cracks per BEM run;fracture method;sampling density
-collisionObject0;bunny;-3.2;-1.6;0; 0.2;0.1; 1.8; 0; 0.1; 0.005;3.1e9;0.327;1100; 4e6;1e5;2.0; 900;1;vdb(vdbmat\grains_cu_oct_nb10.vdb,2e4,0.0003,1);7;1
-collisionObject2;Arma1;   4;  -2;0; 0.1;0.2;-1.8; 0; 0.1; 0.005;3.1e9;0.327;1700; 6e6;7e5;3.0;1000;0;vdb(vdbmat\grains_cu_ell_squished_z.vdb,3e4,0.0003,1);14;1
+collisionObject0;bunny;-3.2;-1.6;0; 0.2;0.1; 1.8; 0; 0.1; 0.005;3.1e9;0.327;1100; 4e6;1e5;2.0; 900;1;vdb(grains_cu_oct_nb10.vdb,2e4,0.0003,1);7;1
+collisionObject2;Arma1;   4;  -2;0; 0.1;0.2;-1.8; 0; 0.1; 0.005;3.1e9;0.327;1700; 6e6;7e5;3.0;1000;0;vdb(grains_cu_ell_squished_z.vdb,3e4,0.0003,1);14;1
 collisionObject3;bowl;    0;   0;0; 0;0;0;        0; 0.3; 0.007;3.1e9;0.327; 800; 3e6;1e4;4.0; 500;0;default;9;1

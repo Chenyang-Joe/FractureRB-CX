@@ -7,11 +7,12 @@ start=$(date +%s.%N)
 cd "$(dirname "$0")"
 
 # Run the simulation
-../build/FractureRB bowl.bullet bowl.csv \
+gdb --args ../build/FractureRB bowl.bullet bowl.csv \
   -o _out/bowl_ \
   -n 500 \
-  -i 1e3 \
-  -f 5e6 \
+  -i 1e2 \
+  -f 5e5 \
+  -s 2 \
   --default-solver
 
 # Record end time

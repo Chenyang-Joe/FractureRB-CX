@@ -14,6 +14,8 @@ gdb --args ../build/FractureRB glass.bullet glass.csv \
   -f 1e7 \
   -s 2
 
+
+
 # Record end time
 end=$(date +%s.%N)
 

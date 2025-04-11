@@ -164,7 +164,7 @@ namespace FractureSim{
 		int writeVisualMesh(
 			node_map& nodes, elem_map& elems, id_map& regions, id_set& cracks,
 			const vector_type& u, const vector_type& u_c, std::string filename,
-            double adaptiveVDB=0.01, double adaptiveQuadric=-1.0, bool visDisplace=true, bool visCOD=true,
+            double adaptiveVDB=0.01, double adaptiveQuadric=-1.0, bool visDisplace=false, bool visCOD=false,
             bool visClose=false, bool visOBJ=false, double segment=-1.0, bool writePerSegment=false, double postDecimation=-1.0
 		);
 //        int writeVisualMesh2(
