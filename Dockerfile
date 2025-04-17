@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install -y \
     libopenexr-dev \
     libblosc-dev \
     wget \
+    gdb \
     && rm -rf /var/lib/apt/lists/*
 
 # -------------------------------------
@@ -41,7 +42,9 @@ RUN git clone https://github.com/bulletphysics/bullet3.git && \
     make -j"$(nproc)" && \
     make install && \
     cp Extras/Serialize/BulletWorldImporter/libBulletWorldImporter.so /usr/local/lib/ && \
-    cp Extras/Serialize/BulletFileLoader/libBulletFileLoader.so /usr/local/lib/
+    cp Extras/Serialize/BulletFileLoader/libBulletFileLoader.so /usr/local/lib/ && \
+    cp ../Extras/Serialize/BulletWorldImporter/btBulletWorldImporter.h /usr/local/include && \
+    cp ../Extras/Serialize/BulletFileLoader/btBulletFile.h /usr/local/include
 
 # -------------------------------------
 # Build OpenVDB 2.2 using Makefile (only core lib)
@@ -74,7 +77,7 @@ RUN apt-get update && apt-get install -y libcppunit-dev && \
         EXR_LIB_DIR=/usr/lib/x86_64-linux-gnu \
         -j$(nproc) &&\
     apt-get update && apt-get install -y doxygen &&\
-    make install
+    make install INSTALL_DIR=/usr/local
 
 #     sed -i '/python/d' Makefile && \ 
 #     rm -rf python unittest viewer && \

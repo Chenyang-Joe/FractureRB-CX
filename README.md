@@ -32,12 +32,12 @@ fracture-rb bash
 ```
 
 
-3. **Install GDB for Debugging**
+<!-- 3. **Install GDB for Debugging**
 ```bash
 apt-get install gdb
-```
+``` -->
 
-4. **Build and Compile the Project**
+3. **Build and Compile the Project**
 ```bash
 mkdir -p build && cd build
 cmake .. \
@@ -46,17 +46,17 @@ cmake .. \
 -DHLIB_INC=/usr/include/eigen3 \
 -DBULLET_IMPORTER=/usr/local/lib/libBulletWorldImporter.so \
 -DBULLET_LOADER=/usr/local/lib/libBulletFileLoader.so \
--DCMAKE_CXX_FLAGS="-I/tmp/bullet3/Extras/Serialize" \
+-DCMAKE_CXX_FLAGS="-I/opt/bullet3/Extras/Serialize" \
 -DHYENA_LIB2=/app/hyena/libHyENAlib2.so \
 -Dzlib=/usr/lib/x86_64-linux-gnu/libz.so \
 -DHalflib=/usr/lib/x86_64-linux-gnu/libHalf.so \
--DOpenVDBlib=/tmp/openvdb/openvdb/libopenvdb.so \
--DOpenVDBinclude=/tmp/openvdb
+-DOpenVDBlib=/usr/local/lib/libopenvdb.so \
+-DOpenVDBinclude=/usr/local/include
 
 make -j$(nproc)
 ```
 
-5. **Run the Example**
+4. **Run the Example**
 ```bash
 cd ../examples
 chmod +x glass.sh

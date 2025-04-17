@@ -28,6 +28,9 @@ else()
 	endif()
 endif()
 
+# Check the build type (Debug or Release)
+add_definitions(-DEIGEN_NO_DEBUG)
+
 # my Header-only libraries are all in one directory, find that dir by searching for Eigen/Eigen
 find_path(HLIB_INC Eigen/Eigen)
 include_directories (${HLIB_INC}) # takes care of other header-only libs, need Eigen, TCLAP, and parts of Boost
