@@ -2,5 +2,6 @@ build/
 examples/_out_record
 examples/_out_04014_2
 examples/_out_04014
+examples/_out_0418
 .vscode
 fracturerb_nodebug.tar

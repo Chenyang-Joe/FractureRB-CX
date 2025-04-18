@@ -43,8 +43,8 @@ RUN git clone https://github.com/bulletphysics/bullet3.git && \
     make install && \
     cp Extras/Serialize/BulletWorldImporter/libBulletWorldImporter.so /usr/local/lib/ && \
     cp Extras/Serialize/BulletFileLoader/libBulletFileLoader.so /usr/local/lib/ && \
-    cp ../Extras/Serialize/BulletWorldImporter/btBulletWorldImporter.h /usr/local/include && \
-    cp ../Extras/Serialize/BulletFileLoader/btBulletFile.h /usr/local/include
+    cp -r ../Extras/Serialize/BulletWorldImporter/ /usr/local/include && \
+    cp -r ../Extras/Serialize/BulletFileLoader/ /usr/local/include
 
 # -------------------------------------
 # Build OpenVDB 2.2 using Makefile (only core lib)

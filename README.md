@@ -46,7 +46,6 @@ cmake .. \
 -DHLIB_INC=/usr/include/eigen3 \
 -DBULLET_IMPORTER=/usr/local/lib/libBulletWorldImporter.so \
 -DBULLET_LOADER=/usr/local/lib/libBulletFileLoader.so \
--DCMAKE_CXX_FLAGS="-I/opt/bullet3/Extras/Serialize" \
 -DHYENA_LIB2=/app/hyena/libHyENAlib2.so \
 -Dzlib=/usr/lib/x86_64-linux-gnu/libz.so \
 -DHalflib=/usr/lib/x86_64-linux-gnu/libHalf.so \
