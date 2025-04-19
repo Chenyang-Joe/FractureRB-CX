@@ -41,7 +41,7 @@ apt-get install gdb
 ```bash
 mkdir -p build && cd build
 cmake .. \
--DCMAKE_CXX_FLAGS="-D_GLIBCXX_USE_CXX11_ABI=0" \
+-DCMAKE_CXX_FLAGS="-D_GLIBCXX_USE_CXX11_ABI=1" \
 -DCMAKE_BUILD_TYPE=Debug \
 -DHLIB_INC=/usr/include/eigen3 \
 -DBULLET_IMPORTER=/usr/local/lib/libBulletWorldImporter.so \
